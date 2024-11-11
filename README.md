@@ -60,7 +60,7 @@ pip install tox
 ```
 luego ejecutar el comando 
 ```bash
-tox -e dev
+tox -e dep
 ```
 esto puede tardar bastante ya que las librerias de pandas y sklearn son bastante pesadas
 

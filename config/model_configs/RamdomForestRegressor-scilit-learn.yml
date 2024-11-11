@@ -1,0 +1,18 @@
+model_type: RandomForest
+config:
+  target: "target_column"
+  features:
+    - "feature1"
+    - "feature2"
+  test_size: 0.2
+  random_state: 42
+  temp_features:
+    - "temp1"
+  qual_vars:
+    - "qual1"
+  categorical_vars:
+    - "cat1"
+  qual_mappings:
+    qual1: 1
+  n_estimators: 100
+  max_depth: 10

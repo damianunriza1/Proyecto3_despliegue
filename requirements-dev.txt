@@ -10,3 +10,7 @@ scikit-learn          # Modelos de machine learning y herramientas de preprocesa
 # Herramientas de desarrollo y pruebas
 tox                   # Automatización de entornos de desarrollo y pruebas
 pytest                # Framework para escribir y ejecutar pruebas
+mlflow
+argparse
+pydantic
+strictyaml

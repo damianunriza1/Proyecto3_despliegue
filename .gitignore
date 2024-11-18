@@ -34,3 +34,4 @@ env-proyecto/
 # Archivos de dependencias
 *.lock
 poetry.lock
+model/trained/*.pkl

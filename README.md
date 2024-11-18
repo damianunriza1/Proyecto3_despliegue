@@ -60,7 +60,7 @@ pip install tox
 ```
 luego ejecutar el comando 
 ```bash
-tox -e dev
+tox -e dep
 ```
 esto puede tardar bastante ya que las librerias de pandas y sklearn son bastante pesadas
 
@@ -68,3 +68,46 @@ esto puede tardar bastante ya que las librerias de pandas y sklearn son bastante
 
 ---
 
+
+## Agregar un Nuevo Modelo
+
+Para agregar un nuevo modelo, sigue estos pasos:
+
+1. **Crear el archivo de configuración del modelo**:
+   - En el directorio `model/config/`, crea un archivo YAML con la configuración del nuevo modelo. Por ejemplo, `nuevo_modelo.yml`.
+   - Define los parámetros del modelo en este archivo. Aquí tienes un ejemplo de configuración para un modelo de regresión logística:
+
+     ```yaml
+     target: "rango_precios_var_dependiente"
+     features:
+       - "FID_puntos_comerciales"
+       - "municipio"
+       - "departamen"
+       - "cod_depart"
+       - "cod_dane_mpio"
+       - "categoria_mtv11"
+     test_size: 0.2
+     random_state: 42
+     ```
+
+2. **Actualizar el archivo de configuración general**:
+   - Abre el archivo `model/config/config.yml`.
+   - Agrega una entrada para el nuevo modelo en la sección `model_configs`. Por ejemplo:
+
+     ```yaml
+     model_configs:
+       random_forest: "./model_configs/random_forest.yml"
+       logistic_regression: "./model_configs/logistic_regression.yml"
+       nuevo_modelo: "./model_configs/nuevo_modelo.yml"
+     ```
+
+3. **Implementar el modelo en el código**:
+   - Abre el archivo [`model/train_pipeline.py`](model/train_pipeline.py).
+   - Asegúrate de que el nuevo modelo esté correctamente referenciado en el código. Si es necesario, actualiza la función `create_pipeline` en [`model/pipeline.py`](model/pipeline.py) para incluir la lógica de tu nuevo modelo.
+
+4. **Entrenar el nuevo modelo**:
+   - Ejecuta el script de entrenamiento con el nombre del nuevo modelo:
+
+     ```sh
+     python model/train_pipeline.py nuevo_modelo
+     ```

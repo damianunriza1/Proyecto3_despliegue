@@ -1,0 +1,9 @@
+app_config:
+  package_name: "modelo-abandono"
+  train_data_file: "model/datasets/tabla_df.csv"
+  test_data_file: "model/datasets/tabla_df.csv"
+  pipeline_save_file: "modelo-abandono-output"
+
+model_configs:
+  random_forest: "./model_configs/random_forest.yml"
+  logistic_regression: "./model_configs/logistic_regression.yml"

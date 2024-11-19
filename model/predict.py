@@ -3,12 +3,13 @@ import typing as t
 import numpy as np
 import pandas as pd
 
-from model import __version__ as _version
-from model.config.core import config
+from model.config.core import config, TRAINED_MODEL_DIR
 from model.processing.data_manager import load_pipeline
 from model.processing.validation import validate_inputs
+from app.config import settings
 
-pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
+_version = config.model_configs[settings.MODEL_NAME].version
+pipeline_file_name = f"{TRAINED_MODEL_DIR}/{config.app_config.pipeline_save_file}-{settings.MODEL_NAME}-{_version}.pkl"
 _abandono_pipe = load_pipeline(file_name=pipeline_file_name)
 
 

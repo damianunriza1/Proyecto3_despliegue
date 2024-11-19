@@ -32,5 +32,7 @@ def save_pipeline(*, pipeline_to_persist: Pipeline, model_name:str) -> None:
 def load_pipeline(*, file_name: str) -> Pipeline:
     """Load a persisted pipeline."""
     file_path = TRAINED_MODEL_DIR / file_name
+    print("hola soy yo***",file_path)
     trained_model = joblib.load(file_path)
+    print("hola soy yo2***",file_path)
     return trained_model

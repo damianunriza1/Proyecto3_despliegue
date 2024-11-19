@@ -18,10 +18,10 @@ sys.path.append(str(project_root))
 def mock_config():
     return {
         'app_config': {
-            'package_name': 'modelo-abandono',
+            'package_name': 'modelo-prediccion-tierras',
             'train_data_file': 'model/datasets/tabla_df.csv',
             'test_data_file': 'model/datasets/tabla_df.csv',
-            'pipeline_save_file': 'modelo-abandono-output'
+            'pipeline_save_file': 'modelo-prediccion-tierras-output'
         },
         'model_configs': {
             'random_forest': {

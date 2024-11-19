@@ -4,13 +4,20 @@ from fastapi import APIRouter, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from loguru import logger
-
-from app.api import api_router
+import sys
 from app.config import settings, setup_app_logging
+from utils.functions import get_args
+
+# Obtener el nombre del modelo desde los argumentos
+model_name = get_args()
+print("model name for use",model_name)
+# Guardar el nombre del modelo en la configuración global
+settings.MODEL_NAME = model_name
 
 # setup logging as early as possible
 setup_app_logging(config=settings)
 
+from app.api import api_router  # Importar después de establecer MODEL_NAME
 
 app = FastAPI(
     title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STR}/openapi.json"

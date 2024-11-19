@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import os
 import yaml
-
+from utils.functions import get_args
 # Añadir el directorio raíz del proyecto al PYTHONPATH
 project_root = Path(__file__).resolve().parent.parent
 sys.path.append(str(project_root))
@@ -67,14 +67,6 @@ def run_training(model_name: str) -> None:
     pipeline.fit(X_train, y_train)
     save_pipeline(pipeline_to_persist=pipeline, model_name=model_name)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python train_pipeline.py <model_name>")
-        sys.exit(1)
-
-    model_name = sys.argv[1]
-    if model_name not in config['model_configs']:
-        print(f"Model {model_name} not found in configuration.")
-        sys.exit(1)
-    print("Training model", model_name)
+if __name__ == "__main__":    
+    model_name = get_args()    
     run_training(model_name)

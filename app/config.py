@@ -26,7 +26,8 @@ class Settings(BaseSettings):
         "https://localhost:8000",  # type: ignore
     ]
 
-    PROJECT_NAME: str = "Banckchurn API"
+    PROJECT_NAME: str = "Prediccion precio de las tierras"
+    MODEL_NAME: str = "ramdom_forest"  # Añadir esta línea para almacenar el nombre del modelo
 
     class Config:
         case_sensitive = True

@@ -55,17 +55,20 @@ def run_training(model_name: str) -> None:
     X = df_filtrado.drop(columns=[model_config['target']])
     y = df_filtrado[model_config['target']]
 
+    label_encoders = {}
     # Codificar variables categóricas
     for col in X.select_dtypes(include=['object']).columns:
         le = LabelEncoder()
         X[col] = le.fit_transform(X[col])
-
+        label_encoders[col] = le
+    le_target = LabelEncoder()
+    y = le_target.fit_transform(y)
     # Dividir el conjunto de datos en entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=model_config['test_size'], random_state=model_config['random_state'])
 
     pipeline = create_pipeline(model_name)
     pipeline.fit(X_train, y_train)
-    save_pipeline(pipeline_to_persist=pipeline, model_name=model_name)
+    save_pipeline(pipeline_to_persist=pipeline, model_name=model_name, label_encoders=label_encoders, label_encoder_target=le_target)
 
 if __name__ == "__main__":    
     model_name = get_args()    

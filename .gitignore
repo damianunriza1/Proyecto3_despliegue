@@ -30,7 +30,7 @@ env-proyecto/
 *.bak
 *.swp
 *.tmp
-
+*.csv
 # Archivos de dependencias
 *.lock
 poetry.lock

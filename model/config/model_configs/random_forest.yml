@@ -1,16 +1,9 @@
 target: "rango_precios_var_dependiente"
 version: "1.0.0"
 features:
-  - FID_puntos_comerciales
   - municipio
   - departamen
-  - cod_depart
-  - cod_dane_mpio
   - categoria_mtv11
-  - cod_precios
-  - Vigencia
-  - FID_ECOSISTEMAS_2017
-  - OBJECTID_1
   - TIPO_ECOSI
   - GRADO_TRAN
   - GRAN_BIOMA
@@ -19,11 +12,6 @@ features:
   - ECOS_SINTE
   - ECOS_GENER
   - UNIDAD_SIN
-  - AMBIENTE_A
-  - SUBSISTEMA
-  - ZONA_HIDRO
-  - ORIGEN
-  - TIPO_AGUA
   - CLIMA
   - PAISAJE
   - RELIEVE
@@ -31,48 +19,26 @@ features:
   - AMB_EDAFOG
   - DESC_AMB_E
   - COBERTURA
-  - UNI_BIOTIC
   - ANFIBIOS
+  - AVES
   - MAGNOLIOPS
   - MAMIFEROS
   - REPTILES
-  - No_Anfibio
-  - No_Aves
-  - No_Magnoli
-  - No_Mamifer
-  - No_Reptile
-  - SHAPE_Leng
-  - AH
   - NOMAH
-  - ZH
   - NOMZH
-  - SZH
   - NOMSZH
-  - IPHE_VALOR
   - IPHE_CATEGORIA
-  - IEUA_VALOR
   - IUEA_CATEGORIA
   - HHV2020
   - HHA_2020
-  - IARC_VALOR
   - IARC_CATEGORIA
-  - IUA_MEDIO_VALOR
   - IUA_MEDIO_CAREGORIA
-  - IUA_SECO_VALOR
   - IUA_sECO_CATEGORIA
-  - IACAL_M
   - CATIACAL_M
-  - IACAL_S
   - CIACAL_S
-  - irh
   - cat
-  - IVH_MEDIO_VALOR
   - IVH_MEDIO_CATEGORIA
-  - IVH_SECO_VALOR
   - IVH_SECO_CATEGORIA
-  - FID_Correlacion_5048_md
-  - UCSuelo
-  - S_UC
   - S_UC_FASE
   - OTRAS_FA_1
   - PENDIENT_1
@@ -84,13 +50,27 @@ features:
   - TIPO_RELIE
   - MATERIAL_P
   - SUBGRUPO
-  - AVES
+  - PERFILES
+  - PORCENTAJE
+  - PROFUNDIDA
+  - TEXTURA
+  - FERTILIDAD
+  - ACIDEZ
+  - DRENAJE
+  - HUMEDAD
+  - ALUMINIO
+  - SALINIDAD_1
+  - SODICIDAD
+  - SATURACION
+  - CALCAREO
+  - Significad
+  - layer
+  - codigo
+  - FA
 test_size: 0.25
 random_state: 42
 n_estimators: 850
 max_depth: 19
-temp_features:
-  - AVES
 qual_vars:
   - rango_precios_var_dependiente
 categorical_vars:
@@ -98,11 +78,66 @@ categorical_vars:
   - departamen
   - categoria_mtv11
   - TIPO_ECOSI
+  - GRADO_TRAN
   - GRAN_BIOMA
   - BIOMA_PREL
+  - BIOMA_IAvH
+  - ECOS_SINTE
+  - ECOS_GENER
+  - UNIDAD_SIN
   - CLIMA
   - PAISAJE
   - RELIEVE
+  - SUELOS
+  - AMB_EDAFOG
+  - DESC_AMB_E
+  - COBERTURA
+  - ANFIBIOS
+  - AVES
+  - MAGNOLIOPS
+  - MAMIFEROS
+  - REPTILES
+  - NOMAH
+  - NOMZH
+  - NOMSZH
+  - IPHE_CATEGORIA
+  - IUEA_CATEGORIA
+  - IARC_CATEGORIA
+  - IUA_MEDIO_CAREGORIA
+  - IUA_sECO_CATEGORIA
+  - CATIACAL_M
+  - CIACAL_S
+  - cat
+  - IVH_MEDIO_CATEGORIA
+  - IVH_SECO_CATEGORIA
+  - S_UC_FASE
+  - OTRAS_FA_1
+  - PENDIENT_1
+  - EROSION_1
+  - S_CLIMA
+  - CLIMA_1
+  - S_PAISAJE
+  - PAISAJE_1
+  - TIPO_RELIE
+  - MATERIAL_P
+  - SUBGRUPO
+  - PERFILES
+  - PORCENTAJE
+  - PROFUNDIDA
+  - TEXTURA
+  - FERTILIDAD
+  - ACIDEZ
+  - DRENAJE
+  - HUMEDAD
+  - ALUMINIO
+  - SALINIDAD_1
+  - SODICIDAD
+  - SATURACION
+  - CALCAREO
+  - Significad
+  - layer
+  - codigo
+  - FA
 qual_mappings:
   Attrited Customer: 1
   Existing Customer: 0

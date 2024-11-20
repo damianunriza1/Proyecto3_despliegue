@@ -64,7 +64,10 @@ def setup_app_logging(config: Settings) -> None:
         logging_logger.handlers = [InterceptHandler(level=config.logging.LOGGING_LEVEL)]
 
     logger.configure(
-        handlers=[{"sink": sys.stderr, "level": config.logging.LOGGING_LEVEL}]
+        handlers=[
+            {"sink": sys.stderr, "level": config.logging.LOGGING_LEVEL},
+            {"sink": "logs/app.log", "level": config.logging.LOGGING_LEVEL, "rotation": "1 MB"}
+        ]
     )
 
 

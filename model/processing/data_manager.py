@@ -54,6 +54,5 @@ def load_label_encoders(model_name: str) -> dict:
     label_encoder_target_path = TRAINED_MODEL_DIR / f"{model_name}_label_encoder_target.pkl"
     
     label_encoders = joblib.load(label_encoders_path)
-    label_encoder_target = joblib.load(label_encoder_target_path)
-    print(f"LabelEncoders cargados desde: {label_encoders_path}")
+    label_encoder_target = joblib.load(label_encoder_target_path)    
     return label_encoders, label_encoder_target

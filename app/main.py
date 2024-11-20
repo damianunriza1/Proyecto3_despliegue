@@ -10,7 +10,6 @@ from utils.functions import get_args
 
 # Obtener el nombre del modelo desde los argumentos
 model_name = get_args()
-print("model name for use",model_name)
 # Guardar el nombre del modelo en la configuración global
 settings.MODEL_NAME = model_name
 

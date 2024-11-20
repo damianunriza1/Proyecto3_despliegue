@@ -27,7 +27,7 @@ class ModelConfig(BaseModel):
     max_depth: Optional[int] = None
     solver: Optional[str] = None
     max_iter: Optional[int] = None
-    temp_features: List[str]
+    temp_features: List[str] = []
     qual_vars: List[str]
     categorical_vars: Sequence[str]
     qual_mappings: Dict[str, int]

@@ -14,6 +14,5 @@ def get_args():
     model_name = sys.argv[1]
     if model_name not in config['model_configs']:
         print(f"Model {model_name} not found in configuration.")
-        sys.exit(1)
-    print("model name for use", model_name)
+        sys.exit(1)    
     return model_name

@@ -41,7 +41,7 @@ def run_training(model_name: str) -> None:
         print(f"Error: El archivo {data_path} no existe.")
         sys.exit(1)
 
-    df1 = spark.read.csv(str(data_path), header=True, inferSchema=True, sep=';')
+    df1 = spark.read.csv(str(data_path), header=True, inferSchema=True, sep=',')
 
     # Convertir a Pandas
     df_filtrado = df1.toPandas()
